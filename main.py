@@ -1,12 +1,14 @@
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.lang import Builder
+from gps.location_logic import start_gps  # GPS integration
 
 # Load UI from .kv file
 Builder.load_file("ui/main_screen.kv")
 
 class MainScreen(Screen):
-    pass
+    def on_gps_button_press(self):
+        start_gps()
 
 class PetQuestApp(App):
     def build(self):
