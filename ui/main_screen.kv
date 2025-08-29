@@ -1,16 +1,22 @@
+ScreenManager:
+    MainScreen:
+
 <MainScreen>:
+    name: "main"
+
     BoxLayout:
-        orientation: 'vertical'
+        orientation: "vertical"
+        padding: 20
+        spacing: 20
+
         Label:
-            text: "🐾 Welcome to PetQuest!"
+            text: "Welcome to PetQuest!"
             font_size: 32
+            size_hint_y: None
+            height: self.texture_size[1]
+
         Button:
-            text: "Feed Pet"
-            on_press: print("Feeding pet...")
-        Button:
-            text: "Play with Pet"
-            on_press: print("Playing with pet...")
-        Button:
-            text: "Check GPS"
-            on_press: print("Checking location...")
-   
+            text: "Start GPS"
+            size_hint_y: None
+            height: 50
+            on_press: root.on_gps_button_press()
